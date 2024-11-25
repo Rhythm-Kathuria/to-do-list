@@ -1,0 +1,162 @@
+/* Global Styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 100%);
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    overflow: hidden;
+}
+
+/* Container */
+.container {
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 400px;
+    animation: fadeIn 1s ease-in-out;
+}
+
+/* Title */
+.title {
+    font-size: 28px;
+    color: #ff6f61;
+    margin-bottom: 20px;
+}
+
+/* Form */
+#todoForm {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+}
+
+#taskInput, #priority, #dueDate {
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    font-size: 16px;
+    transition: border-color 0.3s ease, transform 0.2s ease;
+}
+
+#taskInput {
+    width: 40%;
+}
+
+#priority {
+    width: 25%;
+}
+
+#dueDate {
+    width: 25%;
+}
+
+#taskInput:focus, #priority:focus, #dueDate:focus {
+    outline: none;
+    border-color: #ff6f61;
+    transform: scale(1.05);
+}
+
+#addTaskBtn {
+    background-color: #ff6f61;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 15px;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    flex-basis: 100%;
+}
+
+#addTaskBtn:hover {
+    background-color: #e65b50;
+    transform: scale(1.05);
+}
+
+/* Task List */
+#taskList {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    max-height: 300px;
+    overflow-y: auto;
+    scrollbar-width: thin;
+}
+
+#taskList::-webkit-scrollbar {
+    width: 6px;
+}
+
+#taskList::-webkit-scrollbar-thumb {
+    background-color: #ff6f61;
+    border-radius: 10px;
+}
+
+#taskList::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+.task-item {
+    background-color: #fff;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    padding: 10px 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    animation: slideIn 0.3s ease forwards;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: background-color 0.3s ease;
+}
+
+.task-item.completed {
+    background-color: #d3f9d8;
+    text-decoration: line-through;
+}
+
+.task-item button {
+    background-color: transparent;
+    border: none;
+    color: #ff6f61;
+    font-size: 18px;
+    cursor: pointer;
+    transition: color 0.3s ease, transform 0.2s ease;
+}
+
+.task-item button:hover {
+    color: #e65b50;
+    transform: scale(1.1);
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
